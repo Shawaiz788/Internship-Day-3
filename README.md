@@ -1,50 +1,35 @@
-# Welcome to your Expo app 👋
+# my-app (Expo Router)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Navigation summary
+- **Home → Second**: from `app/index.tsx` pressing **Go to Second Screen** which navigates with:
+  - `router.push('/second')`
+- **Home → Third**: from `app/index.tsx` pressing **Go to Third Screen** which navigates with:
+  - `router.push('/third')`
+- **Home → Deeply nested screen**: from `app/index.tsx` pressing **Go to Deeply Nested Screen** which navigates into a deep path under nested route folders:
+  - `router.push('/fifth/sixth')`
 
-## Get started
+## How the parentheses route groups are used
+In Expo Router, any folder wrapped in **parentheses** is a **route group**.
 
-1. Install dependencies
+In this project you have a route group path like:
+- `app/(anything)/...`
 
-   ```bash
-   npm install
-   ```
+What that means:
+- The `(anything)` folder **groups screens for organization** without necessarily adding an extra segment to the URL.
+- Your deep screen route lives under:
+  - `app/(anything)/(fourth)/fifth/sixth/index.tsx`
 
-2. Start the app
+So the parentheses folders are used to **organize routes** while controlling how the URL path is constructed.
 
-   ```bash
-   npx expo start
-   ```
+## Screens / files
+- `app/index.tsx` — Home / entry screen with buttons
+- `app/second.tsx` — Second screen
+- `app/third.tsx` — Third screen
+- `app/(anything)/(fourth)/fifth/sixth/index.tsx` — Deeply nested index screen
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+## Run
 ```bash
-npm run reset-project
+npm start
 ```
+Then open the URL shown in the terminal (Expo DevTools) or run on an Android/iOS emulator.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
