@@ -1,6 +1,5 @@
 import { useColorScheme } from '@/hooks/use-color-scheme';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
+import { Slot } from 'expo-router';
 import 'react-native-reanimated';
 
 
@@ -9,11 +8,6 @@ export default function RootLayout() {
   const colorScheme = useColorScheme();
 
   return (
-    <>
-    <Stack></Stack>
-    <StatusBar style="auto" />
-    
-    </>
-    
+<Slot></Slot>    
   );
 }
